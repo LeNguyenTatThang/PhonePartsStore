@@ -16,6 +16,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var categories = _context.Categories.ToList();
 
             return View(categories);
@@ -24,12 +31,26 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var category = _context.Categories.FirstOrDefault(c => c.Id == id);
             if (category == null)
                 return NotFound();
@@ -41,7 +62,14 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
-            if(!ModelState.IsValid){
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (!ModelState.IsValid){
                 return View(category);
             }
             _context.Categories.Add(category);
@@ -53,6 +81,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ActionName("ToggleStatusAdmin")]
         public IActionResult ToggleStatus(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var category = _context.Categories.FirstOrDefault(c => c.Id == id);
             if (category == null)
                 return NotFound();
@@ -67,6 +102,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Category category)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(category);
@@ -85,10 +127,17 @@ namespace PhonePartsStore.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            if( id == 0)
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if ( id == 0)
             {
                 return NotFound();
             }

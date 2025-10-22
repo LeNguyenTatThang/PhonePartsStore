@@ -15,6 +15,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var brands = _context.Brands.ToList();
             return View(brands);
         }
@@ -22,12 +29,26 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
 
         [HttpPost]
         public IActionResult ToggleStatusAdmin(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var brand = _context.Brands.FirstOrDefault(b => b.Id == id);
             if (brand == null)
                 return NotFound();
@@ -41,6 +62,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var brand = _context.Brands.FirstOrDefault(c => c.Id == id);
             if (brand == null)
                 return NotFound();
@@ -52,7 +80,14 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Brand brand)
         {
-            if(!ModelState.IsValid){
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (!ModelState.IsValid){
                 return View(brand);
             }
             _context.Brands.Add(brand);
@@ -64,6 +99,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Brand brand)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(brand);
@@ -82,10 +124,17 @@ namespace PhonePartsStore.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            if( id == 0)
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if ( id == 0)
             {
                 return NotFound();
             }

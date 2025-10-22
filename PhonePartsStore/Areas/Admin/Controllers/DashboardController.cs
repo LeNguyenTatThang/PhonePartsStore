@@ -15,6 +15,12 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var totalUsers = _context.Users.Count();
             var totalProducts = _context.Products.Count();
             var totalOrders = _context.Orders.Count();

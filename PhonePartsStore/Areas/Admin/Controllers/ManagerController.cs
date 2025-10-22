@@ -16,7 +16,14 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         }
 
         public IActionResult Index()
-        {   
+        {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             //role # user
             var users = _context.Users.Where(u => u.Role != "User").ToList();
 
@@ -25,12 +32,26 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var user = _context.Users.FirstOrDefault(c => c.Id == id);
             if(user == null) return NotFound();
 
@@ -41,6 +62,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(User user)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var existingUser = _context.Users.Find(user.Id);
             if (existingUser == null) return NotFound();
 
@@ -84,7 +112,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
        public IActionResult Create(User user)
         {
-            if(user.PasswordHash != user.ConfirmPasswordHash) 
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            if (user.PasswordHash != user.ConfirmPasswordHash) 
             {
                 ModelState.AddModelError("ConfirmPasswordHash", "Mật khẩu không khớp");
                 return View(user);
@@ -119,6 +153,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var user = _context.Users.Find(id);
             if (user == null) return NotFound();
 

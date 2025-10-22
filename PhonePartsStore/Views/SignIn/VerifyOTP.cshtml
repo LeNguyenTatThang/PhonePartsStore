@@ -1,0 +1,44 @@
+﻿﻿@{
+ViewData["Title"] = "Xác nhận OTP";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+	<div class="container">
+		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+			<div class="col-first">
+				<h1>Đăng nhập</h1>
+				<nav class="d-flex align-items-center">
+					<a href="#">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+					<a href="#">Quên mật khẩu</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Banner Area -->
+<!--================Login Box Area =================-->
+<section class="login_box_area section_gap">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="login_box_img">
+					<img class="img-fluid" src="~/img/login.jpg" alt="">
+
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="login_form_inner">
+					<h3>Hãy để đôi chân bạn tỏa sáng cùng Shoe Store!</h3>
+					<form method="post" asp-action="VerifyOTP" asp-controller="SignIn">
+						<input type="hidden" name="email" value="@ViewBag.Email">
+						<label>OTP:</label>
+						<input type="text" name="otp" required>
+						<button type="submit">Xác nhận</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End Login Box Area =================-->

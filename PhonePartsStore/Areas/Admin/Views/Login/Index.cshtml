@@ -1,0 +1,188 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login - PhonePartsStore</title>
+
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://images.unsplash.com/photo-1674907534695-e82d5b3ec405?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+            section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+        .form-box {
+            position: relative;
+            z-index: 1;
+            width: 380px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .inputbox {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+            .inputbox input {
+                width: 100%;
+                height: 45px;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid #ddd;
+                color: #fff;
+                font-size: 1em;
+                outline: none;
+                padding-right: 35px;
+            }
+
+            .inputbox label {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                color: #ddd;
+                transform: translateY(-50%);
+                transition: 0.4s ease;
+                pointer-events: none;
+            }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            top: -8px;
+            font-size: 0.85em;
+            color: #fff;
+        }
+
+        .inputbox ion-icon {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            color: #ccc;
+            font-size: 1.2em;
+        }
+
+        .forget {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+            .forget a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .forget a:hover {
+                    text-decoration: underline;
+                }
+
+        button {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #333;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                background: #f1f1f1;
+            }
+
+        .register {
+            text-align: center;
+            margin-top: 15px;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+            .register a {
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+                .register a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <h2>Admin Login</h2>
+            <form asp-area="Admin" asp-action="Index" asp-controller="Login" method="post">
+                <div class="inputbox">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="email" required />
+                    <label>Tên đăng nhập</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" required />
+                    <label>Mật khẩu</label>
+                </div>
+                <div class="forget">
+                    <label><input type="checkbox" /> Nhớ đăng nhập</label>
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+                <button type="submit">Đăng nhập</button>
+                <div class="register">
+                    <p>Quay lại <a href="/">Trang chủ</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

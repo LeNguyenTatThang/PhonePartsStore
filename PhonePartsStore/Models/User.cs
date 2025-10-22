@@ -35,5 +35,7 @@ namespace PhonePartsStore.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
+        public string? ResetPasswordToken { get; set; }
+        public DateTime? ResetTokenExpires { get; set; }
     }
 }

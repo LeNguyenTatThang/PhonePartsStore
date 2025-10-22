@@ -47,7 +47,7 @@ namespace PhonePartsStore.Controllers
                 FeaturedProducts = featuredProducts,
                 BestSellers = bestSellers
             };
-
+            ViewData["ActivePage"] = "Home";
             return View(viewModel);
         }
 

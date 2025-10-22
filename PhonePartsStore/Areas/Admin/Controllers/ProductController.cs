@@ -20,7 +20,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-                var products = _context.Products
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            var products = _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
                 .ToList();
@@ -30,6 +36,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
          [HttpGet]
         public IActionResult Create()
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             ViewBag.Categories = new SelectList(_context.Categories.Where(c => c.IsActive), "Id", "Name");
             ViewBag.Brands = new SelectList(_context.Brands.Where(c => c.IsActive), "Id", "Name");
             return View();
@@ -39,6 +52,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Product product, IFormFile? ImageFile)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
@@ -73,6 +93,12 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var product = _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
@@ -91,21 +117,15 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Product product, IFormFile? ImageFile)
         {
-            Console.WriteLine($">>> POST Edit called for Product ID: {product.Id}");
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
 
             if (!ModelState.IsValid)
             {
-                Console.WriteLine(">>> Model invalid:");
-                foreach (var kvp in ModelState)
-                {
-                    if (kvp.Value.Errors.Count > 0)
-                    {
-                        foreach (var err in kvp.Value.Errors)
-                        {
-                            Console.WriteLine($"- {kvp.Key}: {err.ErrorMessage}");
-                        }
-                    }
-                }
 
                 ViewBag.Categories = _context.Categories.Where(c => c.IsActive).ToList();
                 ViewBag.Brands = _context.Brands.ToList();
@@ -115,11 +135,9 @@ namespace PhonePartsStore.Areas.Admin.Controllers
             var existingProduct = _context.Products.Find(product.Id);
             if (existingProduct == null)
             {
-                Console.WriteLine(">>> Product not found");
                 return NotFound();
             }
 
-            Console.WriteLine(">>> Updating product basic info");
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.CategoryId = product.CategoryId;
@@ -129,7 +147,6 @@ namespace PhonePartsStore.Areas.Admin.Controllers
 
             if (ImageFile != null && ImageFile.Length > 0)
             {
-                Console.WriteLine(">>> Image file uploaded");
 
                 var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products");
 
@@ -139,7 +156,6 @@ namespace PhonePartsStore.Areas.Admin.Controllers
                     if (System.IO.File.Exists(oldFilePath))
                     {
                         System.IO.File.Delete(oldFilePath);
-                        Console.WriteLine($">>> Old image deleted: {existingProduct.ImageUrl}");
                     }
                 }
 
@@ -149,18 +165,12 @@ namespace PhonePartsStore.Areas.Admin.Controllers
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await ImageFile.CopyToAsync(stream);
-                    Console.WriteLine($">>> New image saved: {newFileName}");
                 }
 
                 existingProduct.ImageUrl = "/images/products/" + newFileName;
             }
-            else
-            {
-                Console.WriteLine(">>> No new image uploaded");
-            }
 
             await _context.SaveChangesAsync();
-            Console.WriteLine($">>> Product updated successfully: {existingProduct.Name}, ID: {existingProduct.Id}");
 
             return RedirectToAction("Index");
         }
@@ -169,6 +179,13 @@ namespace PhonePartsStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
+            var role = HttpContext.Session.GetString("UserRole");
+
+            if (role != "Admin" && role != "Manager")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             var product = _context.Products.Find(id);
             if (product == null){
                 return NotFound();

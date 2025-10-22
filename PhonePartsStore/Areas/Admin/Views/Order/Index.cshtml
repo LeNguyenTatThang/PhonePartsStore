@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PhonePartsStore.Models.Order>
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+}
+
+<h2 class="mt-2 text-center text-primary">Danh sách đơn hàng</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+<div class="container-fluid">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead class="table-info">
+            <tr  >
+                <th>Mã đơn hàng</th>
+                <th>Tên khách hàng</th>
+                <th>Thanh toán</th>
+                <th>Ngày đặt hàng</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                
+                <tr class="my-2">
+                    <td scope="row">@order.OrderId</td>
+                    <td scope="row">@order.CustomerName</td>
+                    <td scope="row">@order.PaymentMethod</td>
+                    <td scope="row">@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td scope="row">@order.TotalAmount.ToString("#,0") VNĐ</td>
+                    <td scope="row">
+                        @if (order.PaymentStatus == "Success")
+                        {
+                            <span class="badge bg-success">Thành công</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Thất bại</span>
+                        }
+                    </td>
+                    <td>
+                        <div class="gap-2">
+
+                        <form asp-action="UpdateStatus" asp-controller="Order" asp-area="Admin" method="post" class="justify-content-around d-flex align-items-center gap-2">
+                                <input type="hidden" name="id" value="@order.Id" />
+                                <select name="status" class="form-select form-select-sm" style="width: auto;">
+                                    <option value="Đang xử lý" selected="@(order.OrderStatus == "Đang xử lý")">Đang xử lý</option>
+                                    <option value="Hoàn thành" selected="@(order.OrderStatus == "Hoàn thành")">Hoàn thành</option>
+                                    <option value="Hủy" selected="@(order.OrderStatus == "Hủy")">Hủy</option>
+                                </select>
+                                <button type="submit" class="btn btn-dark btn-sm">
+                                    Cập nhật
+                                </button>
+                            </form>
+                            <div class="d-flex gap-3 justify-content-around pt-2">
+                                <a class="btn btn-primary btn-sm" href="@Url.Action("Detail", "Order", new { OrderId = order.OrderId })">Xem</a>
+                                <form asp-action="Delete" asp-controller="Order" asp-area="Admin" method="post" class="d-flex align-items-center gap-2">
+                                    <input type="hidden" name="id" value="@order.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        Xóa
+                                    </button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

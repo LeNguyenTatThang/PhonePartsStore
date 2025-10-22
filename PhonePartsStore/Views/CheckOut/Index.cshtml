@@ -1,0 +1,118 @@
+@using PhonePartsStore.Models
+@using PhonePartsStore.Extensions
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var cart = HttpContextAccessor.HttpContext.Session
+        .GetObjectFromJson<List<CartItem>>("cart") ?? new List<CartItem>();
+
+    decimal subtotal = cart.Sum(i => i.Price * i.Quantity);
+    decimal shipping = 30000;
+    decimal total = subtotal + shipping;
+}
+
+
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6 wow fadeInUp">Thanh Toán</h1>
+    <ol class="breadcrumb justify-content-center mb-0 wow fadeInUp">
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Trang</a></li>
+        <li class="breadcrumb-item active text-white">Thanh toán</li>
+    </ol>
+</div>
+<div class="container-fluid bg-light overflow-hidden py-5">
+    <div class="container py-5">
+        <h1 class="mb-4 wow fadeInUp">Thông tin thanh toán</h1>
+        <form asp-controller="CheckOut" asp-action="Checkout" method="post">
+        <input type="hidden" name="OrderType" value="other" />
+        <input type="hidden" name="OrderDescription" value="Thanh toán sản phẩm của Phone Parts" />
+        <input type="hidden" name="OrderInformation" value="Thanh toán sản phẩm của Phone Parts" />
+        <input type="hidden" name="Amount" value="@total" />
+            <div class="row g-5">
+                <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp">
+
+                    <div class="form-item">
+                        <label class="form-label my-3">Tên người nhận hàng<sup>*</sup></label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Nhập tên của bạn" required>
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label my-3">Địa chỉ giao hàng<sup>*</sup></label>
+                        <input type="text" name="Address" class="form-control" placeholder="Số nhà, tên đường" required>
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label my-3">Số điện thoại<sup>*</sup></label>
+                        <input type="tel" name="Phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label my-3">Email<sup>*</sup></label>
+                        <input type="email" name="Email" class="form-control" placeholder="Nhập email" required>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-center">
+                                    <th class="text-start">Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tạm tính</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in cart)
+                                {
+                                    <tr class="text-center">
+                                        <th class="text-start py-4">@item.Name</th>
+                                        <td class="py-4">@item.Price.ToString("N0")₫</td>
+                                        <td class="py-4">@item.Quantity</td>
+                                        <td class="py-4">@((item.Price * item.Quantity).ToString("N0"))₫</td>
+                                        <input type="hidden" name="ProductIds" value="@item.Id" />
+                                        <input type="hidden" name="Quantities" value="@item.Quantity" />
+                                    </tr>
+                                }
+                                <tr>
+                                    <td colspan="3" class="text-end py-3 fw-bold">Tạm tính</td>
+                                    <td class="py-3 text-center">@subtotal.ToString("N0")₫</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end py-3 fw-bold">Phí vận chuyển</td>
+                                    <td class="py-3 text-center">@shipping.ToString("N0")₫</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end py-3 fw-bold">Tổng thanh toán</td>
+                                    <td class="py-3 text-center fw-bold text-primary">@total.ToString("N0")₫</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="border-top pt-4">
+                        <h5 class="mb-3">Phương thức thanh toán</h5>
+                        <div class="form-check my-2">
+                            <input type="radio" class="form-check-input" id="cod" name="PaymentMethod" value="cod">
+                            <label class="form-check-label" for="cod">Thanh toán khi nhận hàng (COD)</label>
+                        </div>
+
+                        <div class="form-check my-2">
+                            <input type="radio" class="form-check-input" id="momo" name="PaymentMethod" value="momo" required>
+                            <label class="form-check-label" for="momo">Thanh toán qua Momo</label>
+                        </div>
+                        
+                        <div class="form-check my-2">
+                            <input type="radio" class="form-check-input" id="vnpay" name="PaymentMethod" value="vnpay">
+                            <label class="form-check-label" for="vnpay">Thanh toán qua VnPay</label>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                        <button type="submit" class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-white fw-bold">
+                            Đặt hàng ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

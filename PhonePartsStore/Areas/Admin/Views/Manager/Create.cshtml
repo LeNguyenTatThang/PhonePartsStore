@@ -1,0 +1,113 @@
+@model PhonePartsStore.Models.User
+
+@{
+    ViewData["Title"] = "Thêm tài khoản quản lý";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Thêm tài khoản quản lý</h1>
+
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold">Thông tin tài khoản</h6>
+            <a asp-action="Index" class="btn btn-light btn-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card-body px-4 py-4">
+            <form asp-area="Admin" asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="FullName" class="font-weight-bold">Họ và tên</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input asp-for="FullName" class="form-control" placeholder="Nhập tên người dùng..." />
+                            </div>
+                            <span asp-validation-for="FullName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="font-weight-bold">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input asp-for="Email" class="form-control" placeholder="Nhập email..." />
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Phone" class="font-weight-bold">Số điện thoại</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-phone"></i></span>
+                                </div>
+                                <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại..." />
+                            </div>
+                            <span asp-validation-for="Phone" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Address" class="font-weight-bold">Địa chỉ</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-map-marker-alt"></i></span>
+                                </div>
+                                <input asp-for="Address" class="form-control" placeholder="Nhập địa chỉ..." />
+                            </div>
+                            <span asp-validation-for="Address" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Quyền</label>
+                            <select asp-for="Role" class="form-control">
+                                <option value="Admin">Admin</option>
+                                <option value="Manager">Quản lý</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="PasswordHash" class="font-weight-bold">Mật khẩu</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" minlength="6" maxlength="100" asp-for="PasswordHash" class="form-control" placeholder="Nhập mật khẩu..." />
+                            </div>
+                            <span asp-validation-for="PasswordHash" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="ConfirmPasswordHash" class="font-weight-bold">Xác nhận mật khẩu</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="ConfirmPasswordHash" name="ConfirmPasswordHash" class="form-control" placeholder="Nhập lại mật khẩu..." />
+                                <span asp-validation-for="ConfirmPasswordHash" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-end">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="fas fa-save"></i> Lưu tài khoản
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4 ms-2">
+                                Hủy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

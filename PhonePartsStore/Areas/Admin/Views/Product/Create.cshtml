@@ -1,0 +1,72 @@
+@model PhonePartsStore.Models.Product
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Thêm sản phẩm mới</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin sản phẩm</h6>
+            <a asp-action="Index" class="btn btn-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name" class="font-weight-bold">Tên sản phẩm</label>
+                    <input asp-for="Name" class="form-control" placeholder="Nhập tên sản phẩm..." />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="Description" class="font-weight-bold">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả..."></textarea>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label asp-for="CategoryId" class="font-weight-bold">Danh mục</label>
+                        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories">
+                            <option value="">-- Chọn danh mục --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="BrandId" class="font-weight-bold">Thương hiệu</label>
+                        <select asp-for="BrandId" class="form-control" asp-items="ViewBag.Brands">
+                            <option value="">-- Chọn thương hiệu --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label asp-for="Price" class="font-weight-bold">Giá (VNĐ)</label>
+                        <input asp-for="Price" type="number" step="0.01" class="form-control" placeholder="Nhập giá..." />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="StockQuantity" class="font-weight-bold">Số lượng</label>
+                        <input asp-for="StockQuantity" type="number" class="form-control" placeholder="Nhập số lượng..." />
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="font-weight-bold">Ảnh sản phẩm</label>
+                    <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Lưu sản phẩm
+                    </button>
+                    <a asp-action="Index" class="btn btn-light border">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

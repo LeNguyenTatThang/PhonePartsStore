@@ -1,0 +1,52 @@
+@model PhonePartsStore.Models.Category
+
+@{
+    ViewData["Title"] = "Thêm danh mục";
+}
+
+<div class="container-fluid">
+    <!-- Tiêu đề -->
+    <h1 class="h3 mb-4 text-gray-800">Thêm danh mục linh kiện</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin danh mục</h6>
+            <a asp-action="Index" class="btn btn-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+        <div class="card-body">
+            <form asp-area="Admin" asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label asp-for="Name" class="font-weight-bold">Tên danh mục</label>
+                    <input asp-for="Name" class="form-control" placeholder="Nhập tên danh mục..." />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="Description" class="font-weight-bold">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả (nếu có)..."></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="font-weight-bold">Trạng thái</label>
+                    <select asp-for="IsActive" class="form-control">
+                        <option value="true">Hiển thị</option>
+                        <option value="false">Ẩn</option>
+                    </select>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Lưu danh mục
+                    </button>
+                    <a asp-action="Index" class="btn btn-light border">
+                        Hủy
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

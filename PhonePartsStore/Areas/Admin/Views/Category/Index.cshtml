@@ -1,0 +1,112 @@
+@model IEnumerable<PhonePartsStore.Models.Category>
+<style>
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 26px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.switch.active {
+    background-color: #4CAF50;
+}
+
+.switch.active::before {
+    transform: translateX(24px);
+}
+</style>
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Danh muc</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Bảng danh mục linh kiện điện thoại</h6>
+            <a asp-action="Create" asp-controller="Category" asp-area="Admin" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> Thêm danh mục
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Mã danh mục</th>
+                            <th>Tên danh mục</th>
+                            <th>Trạng thái</th>
+                            <th>Mô tả</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Mã danh mục</th>
+                            <th>Tên danh mục</th>
+                            <th>Trạng thái</th>
+                            <th>Mô tả</th>
+                            <th>#</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    @foreach(var item in Model)
+                    {
+                         <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td class="text-center">
+                                <form asp-action="ToggleStatusAdmin" asp-controller="Category" method="post" style="display:inline;">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="switch @(item.IsActive ? "active" : "")"></button>
+                                </form>
+                            </td>
+                            <td>@item.Description</td>
+                            <td>
+                                <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Sửa
+                                </a>
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal-@item.Id">
+                                    <i class="fas fa-trash"></i> Xóa
+                                </button>
+
+                                <div class="modal fade" id="deleteModal-@item.Id" tabindex="-1" aria-labelledby="deleteModalLabel-@item.Id" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteModalLabel-@item.Id">Xác nhận xóa</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Bạn có chắc chắn muốn xóa danh mục <strong>@item.Name</strong> không?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                                                <a href="@Url.Action("Delete", "Category", new { id = item.Id })" class="btn btn-danger">Xóa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

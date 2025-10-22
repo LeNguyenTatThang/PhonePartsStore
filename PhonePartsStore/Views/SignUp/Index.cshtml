@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<!-- Header Trang Đăng Ký -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6 wow fadeInUp" data-wow-delay="0.1s">Đăng ký</h1>
+    <ol class="breadcrumb justify-content-center mb-0 wow fadeInUp" data-wow-delay="0.3s">
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+        <li class="breadcrumb-item active text-white">Đăng ký</li>
+    </ol>
+</div>
+<!-- Header End -->
+
+<!-- Form Đăng Ký Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="p-5 bg-light rounded shadow-sm">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <h4 class="text-primary border-bottom border-primary border-2 d-inline-block pb-2">Tạo tài khoản mới</h4>
+                        <p class="mb-4 fs-5 text-dark">Vui lòng điền thông tin để đăng ký</p>
+                    </div>
+
+                    <form asp-action="Create" method="post">
+                        <div class="row g-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Họ và tên" required>
+                                    <label for="FullName">Họ và tên</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" required>
+                                    <label for="Email">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="Address" name="Address" placeholder="Địa chỉ" required>
+                                    <label for="Address">Địa chỉ</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" name="Phone" placeholder="Số điện thoại" required>
+                                    <label for="phone">Số điện thoại</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="PasswordHash" name="PasswordHash" placeholder="Mật khẩu" required>
+                                    <label for="PasswordHash">Mật khẩu</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="ConfirmPasswordHash" name="ConfirmPasswordHash" placeholder="Xác nhận mật khẩu" required>
+                                    <label for="ConfirmPasswordHash">Xác nhận mật khẩu</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="terms" name="Terms" required>
+                                    <label class="form-check-label" for="terms">Tôi đồng ý với <a href="#">Điều khoản & Chính sách</a></label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3">Đăng ký</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="mb-0">Đã có tài khoản? <a asp-controller="SignIn" asp-action="Index" class="text-primary">Đăng nhập ngay</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form Đăng Ký End -->

@@ -1,0 +1,70 @@
+@model PhonePartsStore.Models.Product
+
+@{
+    ViewData["Title"] = "Chỉnh sửa sản phẩm";
+    var categories = ViewBag.Categories as List<PhonePartsStore.Models.Category>;
+    var brands = ViewBag.Brands as List<PhonePartsStore.Models.Brand>;
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Chỉnh sửa sản phẩm</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin sản phẩm</h6>
+            <a asp-action="Index" class="btn btn-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <label asp-for="Name">Tên sản phẩm</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="Description">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+               <select asp-for="CategoryId" class="form-control mt-3" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name", Model.CategoryId))">
+                </select>
+
+                <select asp-for="BrandId" class="form-control mt-3" asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name", Model.BrandId))">
+                </select>
+
+                <div class="form-group mt-3">
+                    <label asp-for="Price">Giá</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="StockQuantity">Số lượng tồn kho</label>
+                    <input asp-for="StockQuantity" class="form-control" />
+                    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label>Hình ảnh</label>
+                    <input type="file" name="ImageFile" class="form-control" />
+                    @if(!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img src="@Model.ImageUrl" width="100" />
+                    }
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Lưu</button>
+                    <a asp-action="Index" class="btn btn-light border">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

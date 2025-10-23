@@ -22,6 +22,7 @@ namespace PhonePartsStore.Controllers
             var allProducts = _context.Products.Take(8).Include(p => p.Category).Include(p => p.Brand).ToList();
 
             var newProducts = _context.Products
+                .OrderBy(x => Guid.NewGuid())
                 .OrderByDescending(p => p.CreatedAt)
                 .Take(4)
                 .Include(p => p.Category)
@@ -29,12 +30,14 @@ namespace PhonePartsStore.Controllers
                 .ToList();
 
             var featuredProducts = _context.Products
+                .OrderBy(x => Guid.NewGuid())
                 .Take(4)
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
                 .ToList();
 
             var bestSellers = _context.Products
+                .OrderBy(x => Guid.NewGuid())
                 .Take(4)
                 .Include(p => p.Category)
                 .Include(p => p.Brand)

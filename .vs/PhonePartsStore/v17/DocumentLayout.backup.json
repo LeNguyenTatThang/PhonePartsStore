@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|solutionrelative:phonepartsstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|solutionrelative:phonepartsstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\views\\signin\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|solutionrelative:phonepartsstore\\views\\signin\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\views\\signin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|solutionrelative:phonepartsstore\\views\\signin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|solutionrelative:phonepartsstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EC97248-983D-48EA-A4C7-959681646746}|PhonePartsStore\\PhonePartsStore.csproj|c:\\users\\admin\\desktop\\phonepartsstore\\phonepartsstore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,11 +138,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\appsettings.json",
+              "RelativeDocumentMoniker": "PhonePartsStore\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\appsettings.json",
+              "RelativeToolTip": "PhonePartsStore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T21:26:46.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SignUpController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Controllers\\SignUpController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Controllers\\SignUpController.cs",
@@ -146,12 +163,11 @@
               "RelativeToolTip": "PhonePartsStore\\Controllers\\SignUpController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T15:14:58.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T15:14:58.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "VerifyOTP.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\SignIn\\VerifyOTP.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\SignIn\\VerifyOTP.cshtml",
@@ -159,12 +175,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\SignIn\\VerifyOTP.cshtml",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwCAAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T14:54:31.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:54:31.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Models\\User.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Models\\User.cs",
@@ -172,12 +187,11 @@
               "RelativeToolTip": "PhonePartsStore\\Models\\User.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAswCYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:44:16.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:44:16.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ResetPassword.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Models\\ResetPassword.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Models\\ResetPassword.cs",
@@ -185,12 +199,11 @@
               "RelativeToolTip": "PhonePartsStore\\Models\\ResetPassword.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAqwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:33:26.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:33:26.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\SignIn\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\SignIn\\ResetPassword.cshtml",
@@ -203,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "SignInController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Controllers\\SignInController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Controllers\\SignInController.cs",
@@ -211,12 +224,11 @@
               "RelativeToolTip": "PhonePartsStore\\Controllers\\SignInController.cs",
               "ViewState": "AgIAAIQAAAAAAAAAAAAAwIcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:29:48.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:29:48.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\SignIn\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\SignIn\\ForgotPassword.cshtml",
@@ -224,12 +236,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\SignIn\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T14:29:44.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:29:44.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\SignIn\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\SignIn\\Index.cshtml",
@@ -237,12 +248,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\SignIn\\Index.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAACsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T14:28:20.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:28:20.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\UserController.cs",
@@ -250,12 +260,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\UserController.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:06:21.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:06:21.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\ProductController.cs",
@@ -263,12 +272,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\ProductController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:05:01.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:05:01.567Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ManagerController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\ManagerController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\ManagerController.cs",
@@ -276,12 +284,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\ManagerController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:04:01.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:04:01.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ChartController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\ChartController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\ChartController.cs",
@@ -289,12 +296,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\ChartController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:03:52.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:03:52.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\DashboardController.cs",
@@ -302,12 +308,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:00:18.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T14:00:18.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\LoginController.cs",
@@ -315,12 +320,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\LoginController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAgwDEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:31:44.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:31:44.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Login\\Index.cshtml",
@@ -328,12 +332,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Login\\Index.cshtml",
               "ViewState": "AgIAAKYAAAAAAAAAAAAwwLwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:30:46.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:30:46.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
@@ -341,12 +344,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAL8AAAAAAAAAAAAwwMgAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:27:49.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:27:49.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TableController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\TableController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\TableController.cs",
@@ -354,12 +356,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\TableController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAowBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:26:10.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:26:10.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\OrderController.cs",
@@ -367,12 +368,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\OrderController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:19:16.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:19:16.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Detail.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Order\\Detail.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Order\\Detail.cshtml",
@@ -380,12 +380,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Order\\Detail.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:18:12.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:18:12.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Order\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Order\\Index.cshtml",
@@ -393,12 +392,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Order\\Index.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:16:36.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:16:36.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Category\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Category\\Index.cshtml",
@@ -406,12 +404,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Category\\Index.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:07:32.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:07:32.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
@@ -419,12 +416,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T13:07:20.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:07:20.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BrandController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\BrandController.cs",
@@ -432,12 +428,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\BrandController.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAA9wCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:07:04.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:07:04.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Areas\\Admin\\Controllers\\CategoryController.cs",
@@ -445,12 +440,11 @@
               "RelativeToolTip": "PhonePartsStore\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAQwBQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:06:55.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:06:55.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ContactController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Controllers\\ContactController.cs",
@@ -458,25 +452,24 @@
               "RelativeToolTip": "PhonePartsStore\\Controllers\\ContactController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:00:06.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T13:00:06.101Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "PhonePartsStore\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAK8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-22T12:44:59.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\Shop\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\Shop\\Index.cshtml",
@@ -484,12 +477,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\Shop\\Index.cshtml",
               "ViewState": "AgIAAEIAAAAAAAAAAAAuwEsAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T12:12:55.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:12:55.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Controllers\\HomeController.cs",
@@ -497,12 +489,11 @@
               "RelativeToolTip": "PhonePartsStore\\Controllers\\HomeController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwDEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T11:34:32.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T11:34:32.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\Home\\Index.cshtml",
@@ -510,12 +501,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAKcCAAAAAAAAAAAUwK4CAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T10:28:58.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:28:58.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Detail.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Views\\Shop\\Detail.cshtml",
               "RelativeDocumentMoniker": "PhonePartsStore\\Views\\Shop\\Detail.cshtml",
@@ -523,12 +513,11 @@
               "RelativeToolTip": "PhonePartsStore\\Views\\Shop\\Detail.cshtml",
               "ViewState": "AgIAALYAAAAAAAAAAAAUwL8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T10:01:23.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:01:23.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ShopController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\PhonePartsStore\\PhonePartsStore\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "PhonePartsStore\\Controllers\\ShopController.cs",
@@ -536,8 +525,7 @@
               "RelativeToolTip": "PhonePartsStore\\Controllers\\ShopController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:01:21.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:01:21.068Z"
             }
           ]
         }

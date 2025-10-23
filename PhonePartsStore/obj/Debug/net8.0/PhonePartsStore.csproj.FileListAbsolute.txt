@@ -172,5 +172,5 @@ C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\refint\P
 C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\PhonePartsStore.pdb
 C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\PhonePartsStore.genruntimeconfig.cache
 C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\ref\PhonePartsStore.dll
-C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\PhonePartsStore.sourcelink.json
+C:\Users\Admin\Desktop\PhonePartsStore\PhonePartsStore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -113,7 +113,7 @@ namespace PhonePartsStore.Controllers
 
                     ViewBag.Message = "Thanh toán thành công. Cảm ơn bạn đã mua hàng tại Apple Store.";
                     TempData["PaymentSuccess"] = "Thanh toán thành công!";
-                    return RedirectToAction("ThankYou", "CheckOut");
+                    return Redirect("/ThankYou.html");
 
                 default:
                     TempData["Error"] = "Phương thức thanh toán không hợp lệ.";

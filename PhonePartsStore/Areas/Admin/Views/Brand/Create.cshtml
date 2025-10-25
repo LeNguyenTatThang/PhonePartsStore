@@ -19,7 +19,7 @@
             <form asp-area="Admin" asp-action="Create" method="post">
             @Html.AntiForgeryToken()
                 <div class="form-group">
-                    <label asp-for="Name" class="font-weight-bold">Tên brandc</label>
+                    <label asp-for="Name" class="font-weight-bold">Tên brand</label>
                     <input asp-for="Name" class="form-control" placeholder="Nhập tên brand..." />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>

@@ -3,6 +3,9 @@
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
+    ViewData["Title"] = "Check Out";
+}
+@{
     var cart = HttpContextAccessor.HttpContext.Session
         .GetObjectFromJson<List<CartItem>>("cart") ?? new List<CartItem>();
 

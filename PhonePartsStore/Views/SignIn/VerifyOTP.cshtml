@@ -1,44 +1,52 @@
-﻿﻿@{
-ViewData["Title"] = "Xác nhận OTP";
+﻿@{
+    ViewData["Title"] = "Xác nhận OTP";
 }
 
-<!-- Start Banner Area -->
-<section class="banner-area organic-breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-			<div class="col-first">
-				<h1>Đăng nhập</h1>
-				<nav class="d-flex align-items-center">
-					<a href="#">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-					<a href="#">Quên mật khẩu</a>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End Banner Area -->
-<!--================Login Box Area =================-->
-<section class="login_box_area section_gap">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="login_box_img">
-					<img class="img-fluid" src="~/img/login.jpg" alt="">
+<!-- Header / Banner -->
+<div class="container-fluid page-header py-5 bg-primary-subtle">
+    <h1 class="text-center text-dark display-6 wow fadeInUp" data-wow-delay="0.1s">Xác nhận OTP</h1>
+    <ol class="breadcrumb justify-content-center mb-0 wow fadeInUp" data-wow-delay="0.3s">
+        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Quên mật khẩu</a></li>
+        <li class="breadcrumb-item active text-dark">Xác nhận OTP</li>
+    </ol>
+</div>
 
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="login_form_inner">
-					<h3>Hãy để đôi chân bạn tỏa sáng cùng Shoe Store!</h3>
-					<form method="post" asp-action="VerifyOTP" asp-controller="SignIn">
-						<input type="hidden" name="email" value="@ViewBag.Email">
-						<label>OTP:</label>
-						<input type="text" name="otp" required>
-						<button type="submit">Xác nhận</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--================End Login Box Area =================-->
+<!-- Form OTP -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="p-5 bg-light rounded shadow-sm col-lg-6 mx-auto wow fadeInUp" data-wow-delay="0.2s">
+            <div class="text-center mb-5">
+                <h4 class="text-primary border-bottom border-primary border-2 d-inline-block pb-2">
+                    Xác minh mã OTP
+                </h4>
+                <p class="text-muted mt-3">
+                    Vui lòng nhập mã OTP đã được gửi đến email của bạn để tiếp tục đặt lại mật khẩu.
+                </p>
+            </div>
+
+            <form method="post" asp-action="VerifyOTP" asp-controller="SignIn">
+                <input type="hidden" name="email" value="@ViewBag.Email" />
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="otp" name="otp" placeholder="Nhập mã OTP" required>
+                            <label for="otp">Mã OTP</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100 py-3">
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center mt-4">
+                <a href="/" class="text-decoration-none text-primary">
+                    <i class="fa fa-arrow-left me-2"></i>Quay về trang chủ
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
